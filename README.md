@@ -117,22 +117,72 @@ Your tireless team of analysts:
 
 ---
 
-## 🏦 Supported Exchanges
+## 🏦 Supported Exchanges & Rebates
 
-Powered by the robust CCXT library, we support nearly all major cryptocurrency exchanges:
+QuantDinger integrates with major cryptocurrency exchanges via [CCXT](https://github.com/ccxt/ccxt).
 
-| Binance | OKX | Bybit | Bitget | Gate.io | KuCoin |
-|:---:|:---:|:---:|:---:|:---:|:---:|
-| <img src="https://user-images.githubusercontent.com/1294454/29604020-d5483cdc-87ee-11e7-94c7-d1a8d9169293.jpg" width="50"> | <img src="https://user-images.githubusercontent.com/1294454/29604052-fc7770a6-87ee-11e7-91f4-34adcb17cb83.jpg" width="50"> | <img src="https://user-images.githubusercontent.com/1294454/59143324-00445d80-89b9-11e9-9807-742261596e00.jpg" width="50"> | <img src="https://user-images.githubusercontent.com/1294454/152643503-4554366b-4e60-466d-97e3-057d29219808.jpg" width="50"> | <img src="https://user-images.githubusercontent.com/1294454/31784034-0d5b4a04-b514-11e7-9d78-2d886895b6c3.jpg" width="50"> | <img src="https://user-images.githubusercontent.com/1294454/32065879-e58f0004-ba91-11e7-9092-22589e472624.jpg" width="50"> |
+> 💡 **Exclusive Benefits**: Create accounts through our partner links below to enjoy **reduced trading fees** and **exclusive bonuses**. It helps support the project at no extra cost to you!
 
-> Plus Kraken, Huobi, Coinbase Pro, and 100+ others.
+<table>
+  <tr>
+    <td align="center" width="180">
+      <img src="https://img.shields.io/badge/Binance-F0B90B?style=for-the-badge&logo=binance&logoColor=white" alt="Binance" /><br/>
+      <sub><b>Binance</b></sub><br/>
+      <sub>Spot • Futures • Margin</sub><br/>
+      <a href="https://www.bjwebptyiou.com/join/14449926"><img src="https://img.shields.io/badge/💰_Save_on_Fees-00C853?style=flat-square" alt="Register" /></a>
+    </td>
+    <td align="center" width="180">
+      <img src="https://img.shields.io/badge/OKX-000000?style=for-the-badge&logo=okx&logoColor=white" alt="OKX" /><br/>
+      <sub><b>OKX</b></sub><br/>
+      <sub>Spot • Perpetual • Options</sub><br/>
+      <a href="https://www.bmwweb.ac/referral/earn-together/refer2earn-usdc/claim?hl=zh-CN&ref=GRO_28502_9OSOJ"><img src="https://img.shields.io/badge/🎁_Fee_Rebate-00C853?style=flat-square" alt="Register" /></a>
+    </td>
+    <td align="center" width="180">
+      <img src="https://img.shields.io/badge/Bitget-00C7B1?style=for-the-badge&logoColor=white" alt="Bitget" /><br/>
+      <sub><b>Bitget</b></sub><br/>
+      <sub>Spot • Futures • Copy Trading</sub><br/>
+      <a href="https://www.bitget.rocks/zh-CN/referral/register?clacCode=91AWLH0U&from=%2Fzh-CN%2Fevents%2Freferral-all-program&source=events&utmSource=PremierInviter"><img src="https://img.shields.io/badge/🔥_Bonus_Available-00C853?style=flat-square" alt="Register" /></a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="180">
+      <img src="https://img.shields.io/badge/Bybit-F7931A?style=for-the-badge&logoColor=white" alt="Bybit" /><br/>
+      <sub><b>Bybit</b></sub><br/>
+      <sub>Spot • Derivatives • Earn</sub>
+    </td>
+    <td align="center" width="180">
+      <img src="https://img.shields.io/badge/Gate.io-17E6A1?style=for-the-badge&logoColor=white" alt="Gate.io" /><br/>
+      <sub><b>Gate.io</b></sub><br/>
+      <sub>Spot • Futures • NFT</sub>
+    </td>
+    <td align="center" width="180">
+      <img src="https://img.shields.io/badge/Kraken-5741D9?style=for-the-badge&logo=kraken&logoColor=white" alt="Kraken" /><br/>
+      <sub><b>Kraken</b></sub><br/>
+      <sub>Spot • Margin • Staking</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="180">
+      <img src="https://img.shields.io/badge/KuCoin-24AE8F?style=for-the-badge&logoColor=white" alt="KuCoin" /><br/>
+      <sub><b>KuCoin</b></sub><br/>
+      <sub>Spot • Futures • Bot</sub>
+    </td>
+    <td align="center" width="180">
+      <img src="https://img.shields.io/badge/Huobi-1A73E8?style=for-the-badge&logoColor=white" alt="Huobi" /><br/>
+      <sub><b>HTX (Huobi)</b></sub><br/>
+      <sub>Spot • Futures • Margin</sub>
+    </td>
+    <td align="center" width="180">
+      <img src="https://img.shields.io/badge/100+-Exchanges-blue?style=for-the-badge" alt="More" /><br/>
+      <sub><b>And More...</b></sub><br/>
+      <sub>via CCXT library</sub>
+    </td>
+  </tr>
+</table>
 
 ---
 
 ### Multi-Language Support
-
-<details>
-  <summary><b>Show supported languages</b></summary>
 
 QuantDinger is built for a global audience with comprehensive internationalization:
 
@@ -150,8 +200,6 @@ QuantDinger is built for a global audience with comprehensive internationalizati
 </p>
 
 All UI elements, error messages, and documentation are fully translated. Language is auto-detected based on browser settings or can be manually switched in the app.
-
-</details>
 
 ---
 
@@ -501,23 +549,16 @@ Join our global community for strategy sharing and technical support:
 
 If QuantDinger helps you profit, consider buying the developers a coffee. Your support keeps the project alive!
 
-<details>
-  <summary><b>View Crypto Donation Addresses</b></summary>
-
-  **ERC-20 / BEP-20 / Polygon / Arbitrum**
-  ```
-  0x96fa4962181bea077f8c7240efe46afbe73641a7
-  ```
-  <img src="https://img.shields.io/badge/USDT-Accepted-26A17B?style=flat-square&logo=tether" alt="USDT">
-  <img src="https://img.shields.io/badge/ETH-Accepted-3C3C3D?style=flat-square&logo=ethereum" alt="ETH">
-</details>
+**ERC-20 / BEP-20 / Polygon / Arbitrum**
+```
+0x96fa4962181bea077f8c7240efe46afbe73641a7
+```
+<img src="https://img.shields.io/badge/USDT-Accepted-26A17B?style=flat-square&logo=tether" alt="USDT">
+<img src="https://img.shields.io/badge/ETH-Accepted-3C3C3D?style=flat-square&logo=ethereum" alt="ETH">
 
 ---
 
 ### Commercial Services
-
-<details>
-  <summary><b>Show services</b></summary>
 
 We offer professional services to help you get the most out of QuantDinger:
 
@@ -531,8 +572,6 @@ We offer professional services to help you get the most out of QuantDinger:
 **Interested?** Contact us via:
 - 📧 Email: [brokermr810@gmail.com](mailto:brokermr810@gmail.com)
 - 💬 Telegram: [@worldinbroker](https://t.me/worldinbroker)
-
-</details>
 
 ---
 
