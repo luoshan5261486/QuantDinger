@@ -1,7 +1,7 @@
 name: Basic CI
 
-# Minimal CI workflow for basic sanity checks.
-# This workflow ensures the codebase is importable and has no critical syntax errors.
+# Basic CI workflow for syntax and lint checks.
+# This workflow ensures the codebase has no syntax errors and passes linting.
 # It does NOT run tests, start servers, or require external services.
 
 on:
@@ -11,39 +11,41 @@ on:
     branches: [main, master]
 
 jobs:
-  sanity-check:
-    name: Python Sanity Check
+  python-check:
+    name: Python Syntax Check
     runs-on: ubuntu-latest
     
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        # Checkout step is required to access repository files.
 
-      - name: Set up Python 3.10
+      - name: Set up Python 3.12
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
-          # Use Python 3.10 as the minimum version per README.md requirements.
-          # This is the lowest reasonable version for this project.
+          python-version: '3.12'
+          # Use Python 3.12 to match Dockerfile and support f-string expressions with backslashes (PEP 701)
 
       - name: Install dependencies
         working-directory: ./backend_api_python
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          # Install project dependencies to verify they are installable
-          # and to enable import checks in the next step.
-          # Using pip install (not pip install --user) for simplicity.
+          # Install dependencies to verify they are installable and enable import checks.
 
-      - name: Python syntax and import check
+      - name: Python syntax check
         working-directory: ./backend_api_python
         run: |
-          # Check Python syntax for all .py files (catches syntax errors early)
+          # Check Python syntax for all .py files using compileall
+          # This catches syntax errors, indentation issues, and basic structural problems
+          echo "Checking Python syntax..."
           python -m py_compile run.py
-          python -m compileall -q app/ || (echo "Syntax check failed" && exit 1)
-          
-          # Verify critical modules can be imported (validates import resolution)
+          python -m compileall -q app/ scripts/ || (echo "Python syntax check failed" && exit 1)
+          echo "✓ Python syntax check passed"
+
+      - name: Python import check
+        working-directory: ./backend_api_python
+        run: |
+          # Verify critical modules can be imported
           # We import but do NOT call create_app() to avoid triggering:
           # - Database connections
           # - Worker threads
@@ -58,15 +60,44 @@ jobs:
           from app.routes import health
           
           print('✓ Core modules imported successfully')
-          print('✓ No critical syntax or import errors detected')
+          print('✓ No critical import errors detected')
           "
-          # This step will FAIL if:
-          # - Python syntax errors exist (caught by py_compile/compileall)
+          # This will FAIL if:
           # - Critical imports fail (missing dependencies, broken module structure)
-          # This step will PASS if:
-          # - Code is syntactically valid
+          # This will PASS if:
           # - Dependencies are available and importable
           # - Core module structure is intact
-          # Note: We do NOT call create_app() to avoid runtime dependencies.
-          # Runtime errors that require DB/external services are not checked here.
+
+  frontend-check:
+    name: Frontend Syntax Check
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '16'
+          # Use Node.js 16 as per README.md requirements.
+
+      - name: Install dependencies
+        working-directory: ./quantdinger_vue
+        run: |
+          npm ci
+          # Use npm ci for faster, reliable, reproducible builds in CI.
+
+      - name: Frontend lint check
+        working-directory: ./quantdinger_vue
+        run: |
+          # Run ESLint to check JavaScript/Vue syntax and code quality
+          # Using --no-fix to ensure we only check, not modify code
+          npm run lint:nofix
+          # This will FAIL if:
+          # - JavaScript/Vue syntax errors exist
+          # - ESLint rules are violated
+          # This will PASS if:
+          # - Code is syntactically valid
+          # - Code passes ESLint rules
 
